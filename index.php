@@ -1,9 +1,9 @@
 <?php
 
-include './database/CRUD.php';
+include './src/database/CRUD.php';
 
 
-insert_data("");
+//insert_data("");
 
 
 echo "hola";
