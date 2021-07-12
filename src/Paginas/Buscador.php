@@ -1,5 +1,5 @@
-<html>
-<head>
+
+
 <script>
 function showUser(str) {
   if (str == "") {
@@ -19,8 +19,6 @@ function showUser(str) {
   }
 }
 </script>
-</head>
-<body>
 
 <form>
 <select name="users" onchange="showUser(this.value)">
@@ -33,6 +31,3 @@ function showUser(str) {
 </form>
 <br>
 <div id="txtHint"><b>Datos a visualizar</b></div>
-
-</body>
-</html>

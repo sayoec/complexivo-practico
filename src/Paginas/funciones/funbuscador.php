@@ -16,7 +16,6 @@ th {text-align: left;}
 </style>
 </head>
 <body>
-<script>console.log('buscador funcion')</script>
 <?php
 include '../../database/CRUD.php';
 $q = intval($_GET['q']);
