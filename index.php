@@ -1,27 +1,32 @@
 <?php include 'header.php'; ?>
-<main>
-    <div class="album py-5 bg-light">
-        <div class="container">
 
-            <?php
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+      <?php
             include './src/database/CRUD.php';
-
-
-            //echo $_GET['pagina'];
-
             switch ($_GET['pagina']) {
                 case 'buscador':
                     include 'src/paginas/Buscador.php';
                     break;
+                case 'registrarse':
+                    include 'src/paginas/registrarse.php';
+                    break;
+                case 'login':
+                    include 'src/paginas/login.php';
+                    break;
                 default:
-                    echo 'Hola';
+                    echo '';
                     break;
             }
-
-
             ?>
+      </div>
+    </div>
+  </section>
 
-
+<main>
+    <div class="album py-5 bg-light">
+        <div class="container">          
         </div>
     </div>
 

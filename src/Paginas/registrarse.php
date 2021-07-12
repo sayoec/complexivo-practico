@@ -1,3 +1,28 @@
+
+<script>
+function registrar() {
+   var correo = document.getElementById("inputEmail4").value;
+   console.log(correo)
+
+  /*if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      console.log(this)
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }else{
+        document.getElementById("txtHint").innerHTML = 'Error en la consulta';
+      }
+    };
+    xmlhttp.open("GET","src/paginas/funciones/fun_buscador.php?q="+str,true);
+    xmlhttp.send();
+  }*/
+}
+</script>
+
 <form class="row g-3">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Email</label>
@@ -31,14 +56,6 @@
     <input type="text" class="form-control" id="inputZip">
   </div>
   <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button onclick="registrar()" class="btn btn-primary">Registrarse</button>
   </div>
 </form>

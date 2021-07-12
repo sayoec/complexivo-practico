@@ -7,7 +7,7 @@
       </a>
       <div class="d-flex flex-row">
       <a class="nav-link" href="?pagina=registrarse">Registrarse</a>
-      <a class="nav-link" href="?pagina=iniciar">Iniciar Sesion</a>
+      <a class="nav-link" href="?pagina=login">Iniciar Sesion</a>
       <a class="nav-link" href="?pagina=buscador">Consultas</a>
       <a class="nav-link" href="?pagina=servicio">Registra Nuevo Servicio</a>
       </div>

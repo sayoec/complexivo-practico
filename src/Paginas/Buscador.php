@@ -8,13 +8,14 @@ function showUser(str) {
   } else {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
+      console.log(this)
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("txtHint").innerHTML = this.responseText;
       }else{
         document.getElementById("txtHint").innerHTML = 'Error en la consulta';
       }
     };
-    xmlhttp.open("GET","src/paginas/funciones/funbuscador.php?q="+str,true);
+    xmlhttp.open("GET","src/paginas/funciones/fun_buscador.php?q="+str,true);
     xmlhttp.send();
   }
 }
