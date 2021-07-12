@@ -4,8 +4,9 @@
 //Recuperar datos de la base de datos
 function select_data($query_enviado)
 {    include('conexion.php');
-    $sql = "SELECT * FROM cliente";
+    $sql = $query_enviado;
     $result = $conn->query($sql);
+    $registros = array();
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $registros[] = $row;

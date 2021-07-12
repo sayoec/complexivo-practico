@@ -11,7 +11,9 @@
       }
          var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
+            console.log(this)
             if (this.readyState == 4 && this.status == 200) {
+              window.location.replace('?pagina=buscador')
               
             }else{
               document.getElementById("formulario-mensaje").innerHTML = 'Problemas con el usuario o correo';
