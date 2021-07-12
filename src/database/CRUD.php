@@ -1,23 +1,21 @@
 <?php
 
-include('./conexion.php');
-
 
 //Recuperar datos de la base de datos
 function select_data($query_enviado)
 {
     /* Conexion a la base de datos */
-    include('./conexion.php');
+    include('conexion.php');
     /* Conexion a la base de datos */
+    //$resultado = $query_enviado*3;
 
-
-    $sql = "SELECT id, firstname, lastname FROM MyGuests";
+    $sql = "SELECT * FROM cliente";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
+            echo "id: " . $row["cli_cedula"] . " - Name: " . $row["cli_nombre"] . " " . $row["cli_apellido"] . "<br>";
         }
     } else {
         echo "0 results";
@@ -26,6 +24,7 @@ function select_data($query_enviado)
 
     
     $conn->close();
+    return $$result;
 }
 
 function insert_data($query_enviado)

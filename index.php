@@ -3,10 +3,10 @@
 include './src/database/CRUD.php';
 
 
-//insert_data("");
+$respuesta = select_data(1);
 
 
-echo "hola";
+echo "hola ".$respuesta;
 
 
 

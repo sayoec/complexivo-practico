@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "COMPLEXIVO";
+$dbname = "complexivotest";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 //Posible error al conectarse a la BD
