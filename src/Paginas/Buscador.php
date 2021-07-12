@@ -10,9 +10,11 @@ function showUser(str) {
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("txtHint").innerHTML = this.responseText;
+      }else{
+        document.getElementById("txtHint").innerHTML = 'Error en la consulta';
       }
     };
-    xmlhttp.open("GET","getuser.php?q="+str,true);
+    xmlhttp.open("GET","src/paginas/funciones/funbuscador.php?q="+str,true);
     xmlhttp.send();
   }
 }
@@ -30,7 +32,7 @@ function showUser(str) {
   </select>
 </form>
 <br>
-<div id="txtHint"><b>Person info will be listed here...</b></div>
+<div id="txtHint"><b>Datos a visualizar</b></div>
 
 </body>
 </html>

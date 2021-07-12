@@ -3,28 +3,19 @@
 
 //Recuperar datos de la base de datos
 function select_data($query_enviado)
-{
-    /* Conexion a la base de datos */
-    include('conexion.php');
-    /* Conexion a la base de datos */
-    //$resultado = $query_enviado*3;
-
+{    include('conexion.php');
     $sql = "SELECT * FROM cliente";
     $result = $conn->query($sql);
-
     if ($result->num_rows > 0) {
-        // output data of each row
         while ($row = $result->fetch_assoc()) {
-            echo "id: " . $row["cli_cedula"] . " - Name: " . $row["cli_nombre"] . " " . $row["cli_apellido"] . "<br>";
+            $registros[] = $row;
         }
     } else {
         echo "0 results";
     }
 
-
-    
     $conn->close();
-    return $$result;
+    return $registros;
 }
 
 function insert_data($query_enviado)
@@ -67,4 +58,3 @@ function delete_data($query_enviado)
     }
     $conn->close();
 }
-?>

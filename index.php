@@ -1,13 +1,17 @@
 <?php
-
 include './src/database/CRUD.php';
 
 
-$respuesta = select_data(1);
+//echo $_GET['pagina'];
 
-
-echo "hola ".$respuesta;
-
+switch ($_GET['pagina']) {
+    case 'buscador':
+        include 'src/paginas/Buscador.php';
+        break;
+    default:
+        echo 'Hola';
+        break;
+}
 
 
 
