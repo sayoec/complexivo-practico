@@ -12,7 +12,7 @@ $respuesta = insert_data("INSERT INTO cliente VALUES ('".$cedula."', '".$nombre.
 if($respuesta == true){
     echo "Logrado";
 }else{
-    echo "No logrado";
+    HTTP_response_code(400);
 }
 
 ?>

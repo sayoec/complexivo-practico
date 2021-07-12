@@ -12,7 +12,7 @@ if(count($respuesta) > 0){
     $_SESSION['cli_nombre'] = $respuesta[0]['cli_nombre'];
     $_SESSION['cli_apellido'] = $respuesta[0]['cli_apellido'];
     $_SESSION['cli_cedula'] = $respuesta[0]['cli_cedula'];
-    echo 'logrado';
+
 }else{
     HTTP_response_code(400);
 }

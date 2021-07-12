@@ -20,7 +20,7 @@
             if (this.readyState == 4 && this.status == 200) {
               document.getElementById("formulario").innerHTML = '<div class="alert alert-success" role="alert">Usuario Registrado con exito</div>';
             }else{
-              document.getElementById("formulario-mensaje").innerHTML = 'Sucedio algun error y el usuario no se pudo registrar.';
+              document.getElementById("formulario-mensaje").innerHTML = 'Sucedio algun error y el usuario no se pudo registrar. ';
             }
           };
           xmlhttp.open("GET","src/paginas/funciones/fun_registrarse.php?correo="+correo+"&password="+password+"&cedula="+cedula+"&nombre="+nombre+"&apellido="+apellido,true);

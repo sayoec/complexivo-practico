@@ -18,6 +18,9 @@
                 case 'login':
                     include 'src/paginas/login.php';
                     break;
+                case 'logout':
+                    include 'src/paginas/logout.php';
+                    break;
                 default:
                     include 'src/paginas/login.php';
                     break;
