@@ -1,16 +1,39 @@
+<script>
+    function login() {
+        var correo = document.getElementById("correo").value;
+        var password = document.getElementById("password").value;
+
+      if(correo == '' || password == ''){
+        document.getElementById("formulario-mensaje").innerHTML = 'Usuario o correo no se ingreso';
+        return
+      }else{
+        document.getElementById("formulario-mensaje").innerHTML = '';
+      }
+         var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              
+            }else{
+              document.getElementById("formulario-mensaje").innerHTML = 'Problemas con el usuario o correo';
+            }
+          };
+          xmlhttp.open("GET","src/paginas/funciones/fun_login.php?correo="+correo+"&password="+password,true);
+          xmlhttp.send();
+    }
+</script>
+<h1>Login</h1>
+</br>
+<div  id="formulario-mensaje"class="text-danger" role="alert"><b></b></div>
 <form>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" id="password">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="col-12">
+        <button class="btn btn-primary" type="button" onclick="login()">Login</button>
+    </div>
 </form>

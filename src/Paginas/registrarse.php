@@ -1,61 +1,61 @@
-
 <script>
-function registrar() {
-   var correo = document.getElementById("inputEmail4").value;
-   console.log(correo)
+    function registrar() {
+        var correo = document.getElementById("correo").value;
+        var password = document.getElementById("password").value;
+        var cedula = document.getElementById("cedula").value;
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
 
-  /*if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  } else {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      console.log(this)
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("txtHint").innerHTML = this.responseText;
-      }else{
-        document.getElementById("txtHint").innerHTML = 'Error en la consulta';
-      }
-    };
-    xmlhttp.open("GET","src/paginas/funciones/fun_buscador.php?q="+str,true);
-    xmlhttp.send();
-  }*/
-}
+        console.log(correo+' '+password+' '+cedula+' '+nombre+' '+apellido)
+        if (cedula.length < 10) {
+            document.getElementById("cedula-message").innerHTML = 'Minimo 10 caracteres';
+            return
+        } else {
+            document.getElementById("cedula-message").innerHTML = '';
+        }
+
+         var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            console.log(this)
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("formulario").innerHTML = '<div class="alert alert-success" role="alert">Usuario Registrado con exito</div>';
+            }else{
+              document.getElementById("formulario-mensaje").innerHTML = 'Sucedio algun error y el usuario no se pudo registrar.';
+            }
+          };
+          xmlhttp.open("GET","src/paginas/funciones/fun_registrarse.php?correo="+correo+"&password="+password+"&cedula="+cedula+"&nombre="+nombre+"&apellido="+apellido,true);
+          xmlhttp.send();
+    }
 </script>
-
+<div id="formulario">
+<h1>Registrarse</h1>
+<div  id="formulario-mensaje"class="text-danger" role="alert"><b></b></div>
+</br>
 <form class="row g-3">
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4">
-  </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-  <div class="col-12">
-    <button onclick="registrar()" class="btn btn-primary">Registrarse</button>
-  </div>
+    <div class="col-md-6">
+        <label for="correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo">
+    </div>
+    <div class="col-md-6">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password">
+    </div>
+    <div class="col-12">
+        <label class="form-label">Cedula </label>
+        <input type="text" class="form-control" id="cedula">
+        <div id="cedula-message" class="text-danger"></div>
+    </div>
+    <div class="col-6">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre">
+    </div>
+    <div class="col-6">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="apellido">
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="button" onclick="registrar()">Button</button>
+    </div>
 </form>
+
+</div>

@@ -5,6 +5,9 @@
       <div class="col-lg-6 col-md-8 mx-auto">
       <?php
             include './src/database/CRUD.php';
+            if(!isset($_GET['pagina'])){
+                $_GET['pagina'] = '';
+            }
             switch ($_GET['pagina']) {
                 case 'buscador':
                     include 'src/paginas/Buscador.php';
@@ -16,7 +19,7 @@
                     include 'src/paginas/login.php';
                     break;
                 default:
-                    echo '';
+                    include 'src/paginas/login.php';
                     break;
             }
             ?>

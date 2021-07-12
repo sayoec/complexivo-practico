@@ -20,16 +20,17 @@ function select_data($query_enviado)
 
 function insert_data($query_enviado)
 {
-    include('./conexion.php');
-    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-            VALUES ('John', 'Doe', 'john@example.com')";
-
+    include('conexion.php');
+    $sql = $query_enviado;
+    $respuesta = false;
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        $respuesta = true;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
+        $respuesta = false;
     }
     $conn->close();
+    return $respuesta;
 }
 
 function update_data($query_enviado)
