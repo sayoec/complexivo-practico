@@ -32,6 +32,7 @@ if (isset($_SESSION['cli_cedula'])) {
           <a class="nav-link" href="?pagina=login">Iniciar Sesion</a>
         <?php } else { ?>
           <a class="nav-link" href="?pagina=buscador">Consultas</a>
+          <a class="nav-link" href="?pagina=filtro">Filtro</a>
           <a class="nav-link" href="?pagina=servicio">Registra Nuevo Servicio</a>
           <a class="nav-link" href="?pagina=logout">Cerrar Sesión</a>
 
