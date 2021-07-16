@@ -36,25 +36,29 @@ function insert_data($query_enviado)
 
 function update_data($query_enviado)
 {
-    include('./conexion.php');
-    $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-
+    include('conexion.php');
+    $sql = $query_enviado;
+    $respuesta = false;
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully";
+        $respuesta = true;
     } else {
         echo "Error updating record: " . $conn->error;
+        $respuesta = false;
     }
     $conn->close();
+    return $respuesta;
 }
 
 function delete_data($query_enviado)
 {
-    include('./conexion.php');
+    include('conexion.php');
     // sql to delete a record
     $sql = "DELETE FROM MyGuests WHERE id=3";
 
     if ($conn->query($sql) === TRUE) {
         echo "Record deleted successfully";
+        
     } else {
         echo "Error deleting record: " . $conn->error;
     }

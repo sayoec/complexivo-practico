@@ -7,7 +7,7 @@ $cedula = $_GET['cedula'];
 $nombre = $_GET['nombre'];
 $apellido = $_GET['apellido'];
 
-$respuesta = insert_data("INSERT INTO cliente VALUES ('".$cedula."', '".$nombre."', '".$apellido."', '".$correo."', '".$password."')");
+$respuesta = insert_data("INSERT INTO cliente VALUES ('".$cedula."', '".$nombre."', '".$apellido."', '".$correo."', '".$password."', 'cliente')");
 
 if($respuesta == true){
     echo "Logrado";
